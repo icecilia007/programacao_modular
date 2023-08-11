@@ -19,7 +19,6 @@ public class Exercicio_6 {
     public static long calcularNumeroVencedor(long primeiroPremio, long segundoPremio) {
         long tresUltimosPrimeiro = primeiroPremio % 1000;
         long tresPrimeirosSegundo = segundoPremio / 100;
-
         System.out.println(tresPrimeirosSegundo*1000);
 
         long numeroVencedor = tresPrimeirosSegundo * 1000 + tresUltimosPrimeiro;

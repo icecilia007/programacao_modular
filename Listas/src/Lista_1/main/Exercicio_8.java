@@ -1,30 +1,17 @@
-package Lista_1;
+package Lista_1.main;
+import java.util.Scanner;
 
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class Exercicio_11 {
+public class Exercicio_8 {
     public static void main(String[] args) {
-        try {
-            String caminho = "C:\\Users\\Thinkpad\\Documents\\Universidade\\Programação Modular\\Teorico\\Listas\\src\\Lista_1\\datas.txt";
-            BufferedReader reader = new BufferedReader(new FileReader(caminho));
-            int numDatas = Integer.parseInt(reader.readLine());
+        Scanner scanner = new Scanner(System.in);
 
-            for (int i = 0; i < numDatas; i++) {
-                String data = reader.readLine();
+        System.out.print("Digite uma data no formato DD/MM/AAAA: ");
+        String dataInput = scanner.nextLine();
 
-                if (isValidDate(data)) {
-                    System.out.println("A data " + data + " é válida.");
-                } else {
-                    System.out.println("A data " + data + " é inválida.");
-                }
-            }
-
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (isValidDate(dataInput)) {
+            System.out.println("A data é válida.");
+        } else {
+            System.out.println("A data é inválida.");
         }
     }
     public static boolean isValidDate(String data) {

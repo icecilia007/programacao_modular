@@ -1,4 +1,4 @@
-package Lista_1;
+package Lista_1.main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,7 +8,7 @@ public class Exercicio_10 {
 
     public static void main(String[] args) {
         try {
-            String caminho = "C:\\Users\\Thinkpad\\Documents\\Universidade\\Programação Modular\\Teorico\\Listas\\src\\Lista_1\\numeros.txt";
+            String caminho = "C:\\Users\\Thinkpad\\Documents\\Universidade\\Programação Modular\\Teorico\\Listas\\src\\Lista_1\\main\\numeros.txt";
             BufferedReader reader = new BufferedReader(new FileReader(caminho));
             String linha;
 

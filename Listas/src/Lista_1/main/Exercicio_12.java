@@ -1,4 +1,4 @@
-package Lista_1;
+package Lista_1.main;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Exercicio_12 {
     public static void main(String[] args) {
         try {
-            String caminho = "C:\\Users\\Thinkpad\\Documents\\Universidade\\Programação Modular\\Teorico\\Listas\\src\\Lista_1\\frases.txt";
+            String caminho = "C:\\Users\\Thinkpad\\Documents\\Universidade\\Programação Modular\\Teorico\\Listas\\src\\Lista_1\\main\\frases.txt";
             BufferedReader reader = new BufferedReader(new FileReader(caminho));
             String linha;
 
@@ -23,7 +23,6 @@ public class Exercicio_12 {
             e.printStackTrace();
         }
     }
-
     public static String reverseString(String input) {
         StringBuilder reversed = new StringBuilder();
 

@@ -1,6 +1,7 @@
 package org.example.collections;
 
 import org.example.model.Professor;
+import org.example.model.SessaoTecnica;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +51,6 @@ public class ProfessoresCollection {
     public List<Professor> listarProfessores() {
         return professores;
     }
+
 }
 

@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 public class Relatorio {
     public static ProfessoresCollection professoresCollection;
-    public static EstudanteCollection estudanteCollection;
-    public static ProfissionalCollection profissionalCollection;
-    public static UniversidadeCollection universidadeCollection;
-    public static EmpresaCollection empresaCollection;
+    public static EstudantesCollection estudantesCollection;
+    public static ProfissionaisCollection profissionaisCollection;
+    public static UniversidadesCollection universidadesCollection;
+    public static EmpresasCollection empresasCollection;
 
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
         professoresCollection = ProfessoresCollection.getInstance();
-        estudanteCollection = EstudanteCollection.getInstance();
-        profissionalCollection = ProfissionalCollection.getInstance();
-        universidadeCollection = UniversidadeCollection.getInstance();
-        empresaCollection = EmpresaCollection.getInstance();
+        estudantesCollection = EstudantesCollection.getInstance();
+        profissionaisCollection = ProfissionaisCollection.getInstance();
+        universidadesCollection = UniversidadesCollection.getInstance();
+        empresasCollection = EmpresasCollection.getInstance();
 
         dumpData();
         System.out.println("Bem Vindo Ao Simposio Brasileiro de Banco de Dados");
@@ -33,16 +33,16 @@ public class Relatorio {
         professoresCollection.adicionarProfessor(new Professor("Maria", "Santos", "maria@example.com", "9876543210", "Engenharia", 1002));
 
         // Exemplo de estudantes
-        estudanteCollection.adicionarEstudante(new Estudante("Pedro", "Ferreira", "pedro@example.com", "5555555555", 2001, "Ciência da Computação"));
-        estudanteCollection.adicionarEstudante(new Estudante("Ana", "Ribeiro", "ana@example.com", "6666666666", 2002, "Engenharia Civil"));
+        estudantesCollection.adicionarEstudante(new Estudante("Pedro", "Ferreira", "pedro@example.com", "5555555555", 2001, "Ciência da Computação"));
+        estudantesCollection.adicionarEstudante(new Estudante("Ana", "Ribeiro", "ana@example.com", "6666666666", 2002, "Engenharia Civil"));
 
         // Exemplo de empresas
-        empresaCollection.adicionarEmpresa(new Empresa(1234567890L, "Av. Principal, 123", "TechCorp", "Carlos Silva", "Tecnologia"));
-        empresaCollection.adicionarEmpresa(new Empresa(9876543210L, "Rua Comercial, 456", "BuildIt", "Laura Pereira", "Construção"));
+        empresasCollection.adicionarEmpresa(new Empresa(1234567890L, "Av. Principal, 123", "TechCorp", "Carlos Silva", "Tecnologia"));
+        empresasCollection.adicionarEmpresa(new Empresa(9876543210L, "Rua Comercial, 456", "BuildIt", "Laura Pereira", "Construção"));
 
         // Exemplo de universidades
-        universidadeCollection.adicionarUniversidade(new Universidade(1111111111L, "Av. Universitária, 789", "UniTech", "Roberto Souza", "UT", "Campus Central"));
-        universidadeCollection.adicionarUniversidade(new Universidade(2222222222L, "Rua da Educação, 567", "UniEng", "Marta Oliveira", "UE", "Campus Sul"));
+        universidadesCollection.adicionarUniversidade(new Universidade(1111111111L, "Av. Universitária, 789", "UniTech", "Roberto Souza", "UT", "Campus Central"));
+        universidadesCollection.adicionarUniversidade(new Universidade(2222222222L, "Rua da Educação, 567", "UniEng", "Marta Oliveira", "UE", "Campus Sul"));
     }
     private static void menu(Scanner ent) {
         int options=0;
@@ -110,23 +110,23 @@ public class Relatorio {
                 }
             }
             case "estudante" -> {
-                Estudante estudante = estudanteCollection.buscarEstudante(searchDelete);
+                Estudante estudante = estudantesCollection.buscarEstudante(searchDelete);
                 if (estudante != null) {
-                    estudanteCollection.excluirEstudante(estudante);
+                    estudantesCollection.excluirEstudante(estudante);
                     return true;
                 }
             }
             case "empresa" -> {
-                Empresa empresa = empresaCollection.buscarEmpresa(searchDelete);
+                Empresa empresa = empresasCollection.buscarEmpresa(searchDelete);
                 if (empresa != null) {
-                    empresaCollection.excluirEmpresa(empresa);
+                    empresasCollection.excluirEmpresa(empresa);
                     return true;
                 }
             }
             case "universidade" ->{
-                Universidade universidade = universidadeCollection.buscarUniversidade(searchDelete);
+                Universidade universidade = universidadesCollection.buscarUniversidade(searchDelete);
                 if (universidade != null) {
-                    universidadeCollection.excluirUniversidade(universidade);
+                    universidadesCollection.excluirUniversidade(universidade);
                     return true;
                 }
             }
@@ -138,18 +138,18 @@ public class Relatorio {
     private static void listarObjeto(String text) {
         switch (text) {
             case "professor" -> System.out.println(professoresCollection.listarProfessores().toString());
-            case "estudante" -> System.out.println(estudanteCollection.listarEstudantes().toString());
-            case "empresa" -> System.out.println(empresaCollection.listarEmpresas().toString());
-            case "universidade" -> System.out.println(universidadeCollection.listarUniversidades().toString());
+            case "estudante" -> System.out.println(estudantesCollection.listarEstudantes().toString());
+            case "empresa" -> System.out.println(empresasCollection.listarEmpresas().toString());
+            case "universidade" -> System.out.println(universidadesCollection.listarUniversidades().toString());
         }
     }
 
     private static void buscarObjeto(String text, String search) {
         switch (text) {
             case "professor" -> System.out.println(professoresCollection.buscarProfessor(search).toString());
-            case "estudante" -> System.out.println(estudanteCollection.buscarEstudante(search).toString());
-            case "empresa" -> System.out.println(empresaCollection.buscarEmpresa(search).toString());
-            case "universidade" -> System.out.println(universidadeCollection.buscarUniversidade(search).toString());
+            case "estudante" -> System.out.println(estudantesCollection.buscarEstudante(search).toString());
+            case "empresa" -> System.out.println(empresasCollection.buscarEmpresa(search).toString());
+            case "universidade" -> System.out.println(universidadesCollection.buscarUniversidade(search).toString());
         }
     }
 
@@ -178,11 +178,11 @@ public class Relatorio {
                     ent.nextLine();
                     System.out.println("Curso: ");
                     String curso = ent.nextLine();
-                    estudanteCollection.adicionarEstudante(new Estudante(nome, sobrenome, email, telefone, matricula, curso));
+                    estudantesCollection.adicionarEstudante(new Estudante(nome, sobrenome, email, telefone, matricula, curso));
                 }else{
                     System.out.println("Area especifica: ");
                     String area = ent.nextLine();
-                    profissionalCollection.adicionarProfissional(new Profissional(nome, sobrenome, email, telefone, area));
+                    profissionaisCollection.adicionarProfissional(new Profissional(nome, sobrenome, email, telefone, area));
                 }
             }
             case "universidade","empresa" ->{
@@ -198,14 +198,14 @@ public class Relatorio {
                 if(text.contains("empresa")){
                     System.out.println("Ramo da Atividade: ");
                     String ramo = ent.nextLine();
-                    empresaCollection.adicionarEmpresa(new Empresa(cnpj,endereco,nome,nome_responsavel,ramo));
+                    empresasCollection.adicionarEmpresa(new Empresa(cnpj,endereco,nome,nome_responsavel,ramo));
                 }
                 else {
                     System.out.println("Sigla: ");
                     String sigla = ent.nextLine();
                     System.out.println("Campus: ");
                     String campus = ent.nextLine();
-                    universidadeCollection.adicionarUniversidade(new Universidade(cnpj,endereco,nome,nome_responsavel,sigla,campus));
+                    universidadesCollection.adicionarUniversidade(new Universidade(cnpj,endereco,nome,nome_responsavel,sigla,campus));
                 }
             }
         }

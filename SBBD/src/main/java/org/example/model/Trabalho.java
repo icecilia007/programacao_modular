@@ -1,4 +1,4 @@
-package org.example.t;
+package org.example.model;
 
 import org.example.model.Estudante;
 import org.example.model.Professor;

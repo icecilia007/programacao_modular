@@ -5,16 +5,16 @@ import org.example.model.Empresa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmpresaCollection {
+public class EmpresasCollection {
     private List<Empresa> empresas = new ArrayList<>();
-    private static EmpresaCollection instance;
+    private static EmpresasCollection instance;
 
-    private EmpresaCollection() {
+    private EmpresasCollection() {
     }
 
-    public static EmpresaCollection getInstance() {
+    public static EmpresasCollection getInstance() {
         if (instance == null) {
-            instance = new EmpresaCollection();
+            instance = new EmpresasCollection();
         }
         return instance;
     }

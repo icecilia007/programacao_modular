@@ -5,16 +5,16 @@ import org.example.model.Profissional;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfissionalCollection {
+public class ProfissionaisCollection {
     private List<Profissional> profissionais = new ArrayList<>();
-    private static ProfissionalCollection instance;
+    private static ProfissionaisCollection instance;
 
-    private ProfissionalCollection() {
+    private ProfissionaisCollection() {
     }
 
-    public static ProfissionalCollection getInstance() {
+    public static ProfissionaisCollection getInstance() {
         if (instance == null) {
-            instance = new ProfissionalCollection();
+            instance = new ProfissionaisCollection();
         }
         return instance;
     }

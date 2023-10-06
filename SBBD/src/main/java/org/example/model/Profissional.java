@@ -4,10 +4,12 @@ import org.example.abstracts.Pessoa;
 
 public class Profissional extends Pessoa {
     private String areaEspecifica;
+    private MiniCurso miniCurso;
 
     public Profissional(String nome, String sobrenome, String email, String telefone, String areaEspecifica) {
         super(nome, sobrenome, email, telefone);
         this.areaEspecifica = areaEspecifica;
+        this.miniCurso = null;
     }
 
     public String getAreaEspecifica() {
@@ -16,6 +18,14 @@ public class Profissional extends Pessoa {
 
     public void setAreaEspecifica(String areaEspecifica) {
         this.areaEspecifica = areaEspecifica;
+    }
+
+    public MiniCurso getMiniCurso() {
+        return miniCurso;
+    }
+
+    public void setMiniCurso(MiniCurso miniCurso) {
+        this.miniCurso = miniCurso;
     }
 
     @Override

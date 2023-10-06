@@ -1,6 +1,7 @@
 package org.example.collections;
 
 import org.example.model.MiniCurso;
+import org.example.model.Profissional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,12 @@ public class MiniCursosCollection {
         }
         return instance;
     }
-    public void adicionarMinicurso(MiniCurso minicurso) {
+    public void adicionarMinicurso(MiniCurso minicurso, Profissional profissional) {
 /*        Antes de adicionar um mini curso a collections, precisa associar ele a uma sala,
         se ele não estiver sala associada não adiciona, precisa adiconar utilizando a collections de salas.*/
         if(minicurso.getSalaAssociada()!=null){
+            minicurso.setMinistrante(profissional);
+            profissional.setMiniCurso(minicurso);
             minicursos.add(minicurso);
             System.out.println("Mini Curso adicionado");
         }else {

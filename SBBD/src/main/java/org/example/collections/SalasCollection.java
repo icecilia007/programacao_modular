@@ -36,7 +36,7 @@ public class SalasCollection {
         return null;
     }
 
-    public List<Sala> encontrarSalasDisponiveis(LocalDate data, LocalTime inicioAtividade, LocalTime fimAtividade) {
+    private List<Sala> encontrarSalasDisponiveis(LocalDate data, LocalTime inicioAtividade, LocalTime fimAtividade) {
         List<Sala> salasDisponiveis = new ArrayList<>();
         for (Sala sala : salas) {
             if (sala.isHorarioDisponivel(data, inicioAtividade, fimAtividade)) {

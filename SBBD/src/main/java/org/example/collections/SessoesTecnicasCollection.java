@@ -1,5 +1,6 @@
 package org.example.collections;
 
+import org.example.model.Apresentacao;
 import org.example.model.SessaoTecnica;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,6 @@ public class SessoesTecnicasCollection {
             }
         }
     }
-
     public SessaoTecnica encontrarSessaoTecnicaPorCodigo(int codigo) {
         for (SessaoTecnica sessaoTecnica : sessoesTecnicas) {
             if (sessaoTecnica.getCodigo() == codigo) {

@@ -1,6 +1,8 @@
 package org.example.collections;
 
 import org.example.model.Apresentacao;
+import org.example.model.Professor;
+import org.example.model.Trabalho;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +40,15 @@ public class ApresentacaoCollection {
             apresentacoes.set(index,apresentacaoNova);
         }
     }
-    public void adicionarApresentacao(Apresentacao apresentacao){
+    public void adicionarApresentacao(Apresentacao apresentacao, Trabalho trabalho){
         //assim que adicionar apresentaçao setar o trabalho e apresentaçao
-        apresentacoes.add(apresentacao);
+        if(apresentacao.getSessaoTecnica()!=null) {
+            apresentacao.setTrabalho(trabalho);
+            trabalho.setApresentacao(apresentacao);
+            apresentacoes.add(apresentacao);
+            System.out.println("Apresentacao adicionado");
+        }else{
+            System.out.println("Apresentacao não tem sessao tecnica");
+        }
     }
 }

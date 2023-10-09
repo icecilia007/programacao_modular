@@ -26,6 +26,7 @@ public class SessaoTecnica extends Atividade {
     }
     public boolean agendarApresentacao(Apresentacao apresentacao){
         if(isHorarioDisponivel(apresentacao.getHorarioInicio(),apresentacao.getHorarioFim(), apresentacao.getData())){
+            apresentacao.setSessaoTecnica(this);
             apresentacaoList.add(apresentacao);
         }
         return false;

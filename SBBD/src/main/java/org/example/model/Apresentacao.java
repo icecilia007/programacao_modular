@@ -9,6 +9,7 @@ public class Apresentacao {
     private LocalTime horarioFim;
     private LocalDate data;
     private Trabalho trabalho;
+    private SessaoTecnica sessaoTecnica;
     public Apresentacao() {
     }
 
@@ -17,6 +18,7 @@ public class Apresentacao {
         this.horarioFim = horarioFim;
         this.data = data;
         this.trabalho = null;
+        this.sessaoTecnica = null;
     }
 
     public Apresentacao(int codigo, LocalTime horarioInicio, LocalTime horarioFim, LocalDate data) {
@@ -25,6 +27,7 @@ public class Apresentacao {
         this.horarioFim = horarioFim;
         this.data = data;
         this.trabalho = null;
+        this.sessaoTecnica = null;
     }
 
     public Apresentacao(int codigo, LocalTime horarioInicio, LocalTime horarioFim, LocalDate data, Trabalho trabalho) {
@@ -33,6 +36,7 @@ public class Apresentacao {
         this.horarioFim = horarioFim;
         this.data = data;
         this.trabalho = trabalho;
+        this.sessaoTecnica = null;
     }
 
     public int getCodigo() {
@@ -73,6 +77,14 @@ public class Apresentacao {
 
     public void setTrabalho(Trabalho trabalho) {
         this.trabalho = trabalho;
+    }
+
+    public SessaoTecnica getSessaoTecnica() {
+        return sessaoTecnica;
+    }
+
+    public void setSessaoTecnica(SessaoTecnica sessaoTecnica) {
+        this.sessaoTecnica = sessaoTecnica;
     }
 
     @Override
